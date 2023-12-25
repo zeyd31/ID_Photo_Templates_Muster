@@ -1,0 +1,50 @@
+
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\newlength{\photowidth}
+\setlength{\photowidth}{35mm} % Width of the photo
+\newlength{\photoheight}
+\setlength{\photoheight}{45mm} % Height of the photo
+\newlength{\photosep}
+\setlength{\photosep}{5mm} % Separation between photos
+
+\newcommand{\idphoto}[1]{
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (photo) at (0,0) {\includegraphics[width=\photowidth,height=\photoheight]{#1}};
+    \draw[black, very thin] ($(photo.south west)+(-0.05,-0.05)$) rectangle ($(photo.north east)+(0.05,0.05)$);
+    \draw[blue, thick, dashed] ($(photo.south west)+(-0.0,-0.0)$) -- ++(-0.5,0);
+    \draw[blue, thick, dashed] ($(photo.south west)+(-0.0,-0.0)$) -- ++(-0.0,-0.5);
+    \draw[blue, thick, dashed] ($(photo.south east)+(0.0,-0.0)$) -- ++(0.5,0);
+    \draw[blue, thick, dashed] ($(photo.south east)+(-0.0,-0.5)$) -- ++(0.0,0.5);
+    \draw[blue, thick, dashed] ($(photo.north west)+(-0.0,0.0)$) -- ++(-0.5,0);
+    \draw[blue, thick, dashed] ($(photo.north west)+(0.0,0.0)$) -- ++(-0.0,0.5);
+    \draw[blue, thick, dashed] ($(photo.north east)+(0.0,0.0)$) -- ++(0.5,0);
+    \draw[blue, thick, dashed] ($(photo.north east)+(0.0,0.0)$) -- ++(0.0,0.5);
+  \end{tikzpicture}
+}
+
+\begin{center}
+% Replace "example-image-a" with the actual image filename
+\idphoto{Photos/Muster1.png}\hspace{\photosep}
+\idphoto{Photos/Muster1.png}\hspace{\photosep}
+\idphoto{Photos/Muster1.png}
+
+
+
+\vspace{\photosep}
+
+\idphoto{Photos/Muster2.jpg}\hspace{\photosep}
+\idphoto{Photos/Muster2.jpg}\hspace{\photosep}
+\idphoto{Photos/Muster2.jpg}
+
+\end{center}
+
+\end{document}
