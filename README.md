@@ -30,7 +30,7 @@ To use this template in your local machine, you need to have a LaTeX distributio
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/your-github-username/id-photo-template/issues) if you want to contribute.
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/zeyd31/ID_Photo_Templates_Muster/issues) if you want to contribute.
 
 ## License
 
